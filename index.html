@@ -3,7 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home | Shop</title>
+    <!-- Icono de la pestaña -->
+    <link
+      rel="shortcut icon"
+      href="img/icon/icono_pestaña.png"
+      type="image/x-icon"
+    />
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Iconos de font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>US Style | Home</title>
   </head>
-  <body></body>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container-hero">
+        <div class="container hero">
+          <div class="customer-support">
+            <i class="fa-solid fa-headset"></i>
+            <div class="content-customer-support">
+              <span class="text">Soporte al cliente</span>
+              <span class="number">123-456-9990</span>
+            </div>
+          </div>
+          <div class="container-logo">
+            <i class="fa-solid fa-shirt"></i>
+            <h1 class="logo"><a href="#">US Style</a></h1>
+          </div>
+
+          <div class="container-user">
+            <i class="fa-solid fa-user"></i>
+            <i class="fa-solid fa-basket-shopping"></i>
+            <div class="content-shopping-cart">
+              <span class="text">Carrito</span>
+              <span class="number">(0)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-navbar">
+        <nav class="navbar container">
+          <i class="fa-solid fa-bars"></i>
+          <ul class="menu">
+            <!-- li>a*6  genera 6 etiquetas "li" con la etiqueta "a" por dentro-->
+            <!-- (li>a[href="#"])*6 genera 6 etiquetas con el "#" a todos -->
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Tienda</a></li>
+            <li><a href="#">Colecciones</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Mi cuenta</a></li>
+          </ul>
+          <form class="search-form">
+            <input type="search" placeholder="Buscar..." />
+            <button class="btn-search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </nav>
+      </div>
+    </header>
+  </body>
 </html>

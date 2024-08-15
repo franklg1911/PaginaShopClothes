@@ -1,0 +1,101 @@
+/* Google fonts - Moderustic */
+@import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&display=swap');
+
+:root {
+    --primary-color: #f1e6d4;
+    --background-color: #5a7876;
+    --dark-color: #151515;
+}
+
+html {
+    /* Transforme 10px a porcentaje para toda la página web */
+    font-size: 62.5%;
+    font-family: "Moderustic", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* UTILIDADES */
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+/* Header */
+.container-hero {
+    background-color: var(--background-color);
+}
+
+.hero {
+    /* Coloca el elemento de manera flexible y sencilla de manejar */
+    display: flex;
+    /* Distribuye de manera equitativa los elementos */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.customer-support {
+    display: flex;
+    align-items: center;
+    /* Genera un espacio entre los elementos */
+    gap: 2rem;
+}
+
+.customer-support i {
+    font-size: 3.3rem;
+}
+
+.content-customer-support {
+    display: flex;
+    /* Coloca los elementos en columna */
+    flex-direction: column;
+}
+
+.container-logo {
+    display: flex;
+    align-items: center;
+    /* 0.5rem es igual a la mitad de 1rem es decir tendra 8px */
+    gap: .5rem;
+}
+
+.container-logo i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.container-logo h1 a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.container-user {
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.container-user .fa-user {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    padding-right: 2.5rem;
+    border-right: 1px solid #f1e6d4;
+}
+
+.container-user .fa-basket-shopping {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    padding-left: 1rem;
+}
+
+.content-shopping-cart {
+    display: flex;
+    flex-direction: column;
+}
