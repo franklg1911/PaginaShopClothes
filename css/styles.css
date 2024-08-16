@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&display=swap');
 
 :root {
-    --primary-color: #f1e6d4;
+    --primary-color: #fafafa;
     --background-color: #5a7876;
     --dark-color: #151515;
 }
@@ -26,7 +26,7 @@ html {
     margin: 0 auto;
 }
 
-/* Header */
+/* HEADER */
 .container-hero {
     background-color: var(--background-color);
 }
@@ -86,7 +86,7 @@ html {
     font-size: 2.5rem;
     color: var(--primary-color);
     padding-right: 2.5rem;
-    border-right: 1px solid #f1e6d4;
+    border-right: 1px solid #e2e2e2;
 }
 
 .container-user .fa-basket-shopping {
@@ -99,3 +99,189 @@ html {
     display: flex;
     flex-direction: column;
 }
+
+.container-navbar {
+    background-color: var(--primary-color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.navbar .fa-bars {
+    /* Oculta el elemento */
+    display: none;
+}
+
+.menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.menu li {
+    /* Elimina el estilo de los "li" */
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: var(--dark-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    /* Se emplea para posicionar un elemento en relación con su posición original en el flujo normal del documento para luego utilizarlo en el menu a::after colocando el position:absolute*/
+    position: relative;
+}
+
+/* Se utiliza para insertar un contenido generado después del contenido real del enlace "a" */
+.menu a::after {
+    content: '';
+    width: 1.5rem;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    /* Estas propiedades especifican cuán lejos se moverá el elemento en el eje X (horizontal) y el eje Y (vertical); es decir mueve el elemento hacia la izquierda en un 50% de su ancho; mueve el elemento hacia abajo en un 50% de su propia altura */
+    transform: translate(-50%, 50%);
+    opacity: 0;
+    /* Se aplicará una transición suave de 0.3s a todas las propiedades cuando se cambien */
+    transition: all .3s ease;
+}
+
+.menu a:hover::after {
+    /* Cuando el usuario pase el cursor sobre el enlace, la línea debajo de él se vuelve completamente visible debido a la opacidad cambia de 0 a 1 */
+    opacity: 1;
+}
+
+.menu a:hover {
+    /* Cuando el usuario pasa el cursor sobre el enlace el texto del enlace cambia a blanco */
+    color: #fff;
+}
+
+.search-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 2px solid #fff;
+    border-radius: 2rem;
+    background-color: #fff;
+    height: 4.4rem;
+    /* La propiedad overflow:hidden hace que cualquier contenido que desborde sea recortado y no se muestre fuera del área definida del contenedor */
+    overflow: hidden;
+}
+
+.search-form input {
+    outline: none;
+    font-family: inherit;
+    border: none;
+    width: 25rem;
+    font-size: 1.4rem;
+    /* Se aplicará arriba y abajo 0 , y a los costados 2rem */
+    padding: 0 2rem;
+    color: #777;
+    cursor: pointer;
+}
+
+/* Este pseudo-elemento hace referencia al botón de "x" cuando el usuario escribe dentro del input */
+.search-form input::-webkit-search-cancel-button {
+    /* Borra el "x" del input */
+    appearance: none;
+}
+
+.search-form .btn-search {
+    border: none;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.btn-search i {
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* BANNER */
+.banner {
+    /* Esta propiedad combina dos fondos diferentes en un solo elemento un degradado lineal y una imagen; 100deg define la dirección del degradado es decir que se aplicara en una angulo de 100 grados hacia la derecha y hacia abajo; #000000 es el primer color del degradado que es negro puro; #00000020 es el segundo color del degradado, que también es negro pero con un nivel de transpariencia de 20 */
+    background-image: linear-gradient(100deg, #000000, #00000020), url('../img/banner/banner.jpg');
+    height: 60rem;
+    /*Esta propiedad hace que la imagen de fondo se escale para cubrir completamente el contenedor. Esto significa que la imagen se agrandará o reducirá.   */
+    background-size: cover;
+    background-position: center;
+}
+
+.content-banner {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 25rem 0;
+}
+
+.content-banner p {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.content-banner h2 {
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: 500;
+    /* Define la altura de la línea , es decir 1.2 es un valor relativo significa que la altura sera 1.2 veces del tamaño de su fuente */
+    line-height: 1.2;
+}
+
+.content-banner a {
+    margin-top: 2rem;
+    text-decoration: none;
+    color: var(--dark-color);
+    background-color: var(--primary-color);
+    /* Se le coloca esta propiedad porque no tiene un tamaño; significa que puede estar uno al lado del otro en la misma línea y no interrumpen el flujo de otros elementos en línea */
+    display: inline-block;
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    border-radius: 3rem;
+}
+
+/* MAIN CONTENT */
+
+.main-content {
+    background-color: var(--background-color)
+}
+
+/* FEATURES */
+.container-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    padding: 3rem 0;
+}
+
+.card-feature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: #fff;
+    padding: 1.5rem 0;
+}
+
+.card-feature i {
+    font-size: 2.7rem;
+    color: var(--background-color);
+}
+
+.feature-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* VER EL TEMA DEL COLOR CAMBIAR ?¿ */
